@@ -1,0 +1,327 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  28/Dec/2019  03:36:04
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Exe\ADC_DMA_Temp_Sensor.out
+#    Map file     =
+#        C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\List\ADC_DMA_Temp_Sensor.map
+#    Command line =
+#        -f C:\Users\test\AppData\Local\Temp\EW226A.tmp
+#        ("C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\main.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\MDR32F9Qx_adc.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\MDR32F9Qx_dma.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\MDR32F9Qx_it.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\MDR32F9Qx_port.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\MDR32F9Qx_rst_clk.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\startup_MDR32F9Qx.o"
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj\system_MDR32F9Qx.o"
+#        --no_out_extension -o
+#        "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Exe\ADC_DMA_Temp_Sensor.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\test\Desktop\Программирование\ASTS
+#        Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\List\ADC_DMA_Temp_Sensor.map"
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\Milandr\MDR32F1.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x801'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xc0
+  .intvec            ro code   0x800'0000    0xc0  startup_MDR32F9Qx.o [1]
+                             - 0x800'00c0    0xc0
+
+"P1":                                       0x960
+  .text              ro code   0x800'00c0   0x1bc  MDR32F9Qx_dma.o [1]
+  .text              ro code   0x800'027c   0x1ac  MDR32F9Qx_adc.o [1]
+  .text              ro code   0x800'0428   0x1a0  main.o [1]
+  .text              ro code   0x800'05c8   0x178  MDR32F9Qx_rst_clk.o [1]
+  .text              ro code   0x800'0740    0xd0  system_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0810    0x7a  MDR32F9Qx_it.o [1]
+  .text              ro code   0x800'088a    0x3a  zero_init3.o [3]
+  .text              ro code   0x800'08c4    0x2e  copy_init3.o [3]
+  .text              ro code   0x800'08f4    0x28  data_init.o [3]
+  .iar.init_table    const     0x800'091c    0x24  - Linker created -
+  .text              ro code   0x800'0940    0x1e  cmain.o [3]
+  .text              ro code   0x800'095e     0x4  low_level_init.o [2]
+  .text              ro code   0x800'0962     0x4  exit.o [2]
+  .text              ro code   0x800'0968     0xa  cexit.o [3]
+  .text              ro code   0x800'0974    0x14  exit.o [4]
+  .text              ro code   0x800'0988    0x10  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0998     0xc  cstartup_M.o [3]
+  .text              ro code   0x800'09a4     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09a8     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09ac     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09b0     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09b4     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09b8     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09bc     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09c0     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09c4     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09c8     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09cc     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09d0     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09d4     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09d8     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09dc     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09e0     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09e4     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09e8     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09ec     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09f0     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09f4     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09f8     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'09fc     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a00     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a04     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a08     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a0c     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a10     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a14     0x4  startup_MDR32F9Qx.o [1]
+  .text              ro code   0x800'0a18     0x4  startup_MDR32F9Qx.o [1]
+  Initializer bytes  const     0x800'0a1c     0x4  <for P2-1>
+  .rodata            const     0x800'0a20     0x0  zero_init3.o [3]
+  .rodata            const     0x800'0a20     0x0  copy_init3.o [3]
+                             - 0x800'0a20   0x960
+
+"P2", part 1 of 3:                            0x4
+  P2-1                        0x2000'0000     0x4  <Init block>
+    .data            inited   0x2000'0000     0x4  system_MDR32F9Qx.o [1]
+                            - 0x2000'0004     0x4
+
+"P2", part 2 of 3:                          0x8b8
+  .bss               zero     0x2000'0400   0x400  MDR32F9Qx_dma.o [1]
+  .bss               zero     0x2000'0800    0x2c  main.o [1]
+  .bss               zero     0x2000'082c    0x28  main.o [1]
+  .bss               zero     0x2000'0854    0x28  main.o [1]
+  .bss               zero     0x2000'087c    0x1c  main.o [1]
+  .bss               zero     0x2000'0898    0x14  main.o [1]
+  .bss               zero     0x2000'08ac    0x10  main.o [1]
+                            - 0x2000'08bc   0x8b8
+
+"P2", part 3 of 3:                         0x1000
+  CSTACK                      0x2000'08c0  0x1000  <Block>
+    CSTACK           uninit   0x2000'08c0  0x1000  <Block tail>
+                            - 0x2000'18c0  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'0a20   0x801'ffff  0x1'f5e0
+  0x2000'08bc  0x2000'08bf       0x4
+  0x2000'18c0  0x2000'7fff    0x6740
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4bc:
+          0x2000'0400  0x4bc
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+           0x800'0a1c    0x4
+    1 destination range, total size 0x4:
+          0x2000'0000    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+C:\Users\test\Desktop\Программирование\ASTS Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj: [1]
+    MDR32F9Qx_adc.o          428
+    MDR32F9Qx_dma.o          444             1'024
+    MDR32F9Qx_it.o           122
+    MDR32F9Qx_rst_clk.o      376
+    main.o                   416               188
+    startup_MDR32F9Qx.o      328
+    system_MDR32F9Qx.o       208        4        4
+    ----------------------------------------------
+    Total:                 2'322        4    1'216
+
+dl7M_tln.a: [2]
+    exit.o                     4
+    low_level_init.o           4
+    ----------------------------------------------
+    Total:                     8
+
+rt7M_tl.a: [3]
+    cexit.o                   10
+    cmain.o                   30
+    copy_init3.o              46
+    cstartup_M.o              12
+    data_init.o               40
+    zero_init3.o              58
+    ----------------------------------------------
+    Total:                   196
+
+shb_l.a: [4]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Gaps                       6             1'020
+    Linker created                     36    4'096
+--------------------------------------------------
+    Grand Total:           2'552       40    6'332
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'091c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0940          --   Gb  - Linker created -
+?main                    0x800'0941         Code  Gb  cmain.o [3]
+ADC1_Cmd                 0x800'03bd   0x18  Code  Gb  MDR32F9Qx_adc.o [1]
+ADC1_ITConfig            0x800'03d5   0x18  Code  Gb  MDR32F9Qx_adc.o [1]
+ADC1_Init                0x800'0331   0x5a  Code  Gb  MDR32F9Qx_adc.o [1]
+ADCConvertedValue       0x2000'0898   0x14  Data  Gb  main.o [1]
+ADC_DeInit               0x800'027d   0x5e  Code  Gb  MDR32F9Qx_adc.o [1]
+ADC_IRQHandler           0x800'087b    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+ADC_Init                 0x800'02db   0x38  Code  Gb  MDR32F9Qx_adc.o [1]
+ADC_StructInit           0x800'0313   0x1e  Code  Gb  MDR32F9Qx_adc.o [1]
+ADCx_StructInit          0x800'038b   0x32  Code  Gb  MDR32F9Qx_adc.o [1]
+BACKUP_IRQHandler        0x800'0881    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+BusFault_Handler         0x800'0817    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+CAN1_IRQHandler          0x800'0823    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+CAN2_IRQHandler          0x800'0825    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+COMPARATOR_IRQHandler    0x800'087d    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+CSTACK$$Base            0x2000'08c0          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'18c0          --   Gb  - Linker created -
+DMA_AltCtrlStr          0x2000'0854   0x28  Data  Gb  main.o [1]
+DMA_Cmd                  0x800'021f   0x1e  Code  Gb  MDR32F9Qx_dma.o [1]
+DMA_ControlTable        0x2000'0400  0x400  Data  Gb  MDR32F9Qx_dma.o [1]
+DMA_CtrlDataInit         0x800'00c1   0x74  Code  Gb  MDR32F9Qx_dma.o [1]
+DMA_DeInit               0x800'0135   0x32  Code  Gb  MDR32F9Qx_dma.o [1]
+DMA_IRQHandler           0x800'0829   0x30  Code  Gb  MDR32F9Qx_it.o [1]
+DMA_Init                 0x800'0167   0x9e  Code  Gb  MDR32F9Qx_dma.o [1]
+DMA_InitStr             0x2000'08ac   0x10  Data  Gb  main.o [1]
+DMA_PriCtrlStr          0x2000'082c   0x28  Data  Gb  main.o [1]
+DMA_StructInit           0x800'0205   0x1a  Code  Gb  MDR32F9Qx_dma.o [1]
+DebugMon_Handler         0x800'081d    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+EXT_INT1_IRQHandler      0x800'0883    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+EXT_INT2_IRQHandler      0x800'0885    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+EXT_INT3_IRQHandler      0x800'0887    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+EXT_INT4_IRQHandler      0x800'0889    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+HardFault_Handler        0x800'0813    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+I2C_IRQHandler           0x800'086f    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+MemManage_Handler        0x800'0815    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+NMI_Handler              0x800'0811    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+NVIC_EnableIRQ           0x800'0429   0x14  Code  Lc  main.o [1]
+POWER_IRQHandler         0x800'0871    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+PendSV_Handler           0x800'081f    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+RST_CLK_CPU_PLLconfig    0x800'0687   0x36  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_CPUclkSelection
+                         0x800'06bd    0xe  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_DeInit           0x800'05c9   0x26  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_GetFlagStatus    0x800'06e7   0x26  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_HSIcmd           0x800'0649    0xa  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_HSIstatus        0x800'0653   0x34  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_PCLKcmd          0x800'06cb   0x1c  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_WarmDeInit       0x800'05ef   0x5a  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+Region$$Table$$Base      0x800'091c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0940          --   Gb  - Linker created -
+SSP1_IRQHandler          0x800'086d    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+SSP2_IRQHandler          0x800'087f    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+SVC_Handler              0x800'081b    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+SysTick_Handler          0x800'0821    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+SystemCoreClock         0x2000'0000    0x4  Data  Gb  system_MDR32F9Qx.o [1]
+SystemCoreClockUpdate    0x800'0741   0x6a  Code  Gb  system_MDR32F9Qx.o [1]
+SystemInit               0x800'07ab   0x3e  Code  Gb  system_MDR32F9Qx.o [1]
+Timer1_IRQHandler        0x800'0875    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+Timer2_IRQHandler        0x800'0877    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+Timer3_IRQHandler        0x800'0879    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+UART1_IRQHandler         0x800'0869    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+UART2_IRQHandler         0x800'086b    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+USB_IRQHandler           0x800'0827    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+UsageFault_Handler       0x800'0819    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+WWDG_IRQHandler          0x800'0873    0x2  Code  Gb  MDR32F9Qx_it.o [1]
+__cmain                  0x800'0941         Code  Gb  cmain.o [3]
+__exit                   0x800'0975   0x14  Code  Gb  exit.o [4]
+__iar_copy_init3         0x800'08c5   0x2e  Code  Gb  copy_init3.o [3]
+__iar_data_init3         0x800'08f5   0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'0999         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'088b   0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'095f    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_MDR32F9Qx.o [1]
+_call_main               0x800'094d         Code  Gb  cmain.o [3]
+_exit                    0x800'0969         Code  Gb  cexit.o [3]
+_main                    0x800'095b         Code  Gb  cmain.o [3]
+exit                     0x800'0963    0x4  Code  Gb  exit.o [2]
+main                     0x800'043d  0x152  Code  Gb  main.o [1]
+sADC                    0x2000'087c   0x1c  Data  Gb  main.o [1]
+sADCx                   0x2000'0800   0x2c  Data  Gb  main.o [1]
+
+
+[1] = C:\Users\test\Desktop\Программирование\ASTS Projects\MSTN_IAR_ADC_Temp_Sensor\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  2'552 bytes of readonly  code memory
+     40 bytes of readonly  data memory
+  6'332 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
